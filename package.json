@@ -9,14 +9,21 @@
     "typescript type assertion",
     "typescript type inferrence"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
+    "index": "node ./.24vlh/scan.js",
     "lint": "npx eslint src/**/*.ts --fix",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
     "prettify": "npx prettier src/**/*.ts --write",
-    "publish_package": "npm run build && cp package.json dist/package.json && cd dist && npm publish --access=public",
     "test": "npx jest --logHeapUsage"
   },
   "lint-staged": {

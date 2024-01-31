@@ -5,13 +5,13 @@ Lightweight typescript type assertion library.
 ## Installation
 
 ```bash
-npm i --save @24vlh/ts-assert
+npm i --save @.24vlh/ts-assert
 ```
 
 ## Usage
 
 ```ts
-import {OfArrayType} from '@24vlh/ts-assert/array';
+import {OfArrayType} from '@.24vlh/ts-assert/array';
 
 const array = ['a', 'b', 'c'];
 
