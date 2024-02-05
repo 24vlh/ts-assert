@@ -22,7 +22,17 @@ if (OfArrayType<string>(array)) {
 
 ## List of helpers
 
+### Types
+- TypeofValues
+- ObjectTypeValues
+
+### Helpers
+- ReturnConstructor
+
+### Assertion helpers
 - OfArrayType
+- ArrayOfGivenTypeClass
+- ArrayOfGivenTypePrimitive
 - OfBooleanType
 - OfBooleanTypeAsString
 - EmptyArray
@@ -46,6 +56,7 @@ if (OfArrayType<string>(array)) {
 - ObjectHasOwnProperty
 - ObjectHasProperty
 - ObjectHasPropertyDeepScan
+- OfType
 - OfPrimitiveType
 - OfPrimitiveTypeAsString
 - OfPrimitiveOrBooleanType
