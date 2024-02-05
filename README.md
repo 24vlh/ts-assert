@@ -45,6 +45,7 @@ if (OfArrayType<string>(array)) {
 - OfFalseTypeAsString
 - OfFloatType
 - OfFunctionType
+- InstanceOfType
 - OfIntegerType
 - OfNanType
 - OfNullType
@@ -56,6 +57,7 @@ if (OfArrayType<string>(array)) {
 - ObjectHasOwnProperty
 - ObjectHasProperty
 - ObjectHasPropertyDeepScan
+- ObjectOfType
 - OfType
 - OfPrimitiveType
 - OfPrimitiveTypeAsString
