@@ -1,6 +1,6 @@
 {
   "name": "@24vlh/ts-assert",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Small footprint library that helps with typescript assertions.",
   "author": "@vlah.io",
   "license": "Apache-2.0",
@@ -8,17 +8,19 @@
     "typescript",
     "assertion"
   ],
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/24vlh/ts-assert"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.json",
     "index:refresh": "node ./.24vlh/scan.js && git add ./src/index.ts",
     "lint": "npx eslint src/**/*.ts --fix",
-    "prepack": "cp README.md dist/ && cp LICENSE dist/ && cp package.json dist/ && cd dist",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
     "prettify": "npx prettier src/**/*.ts --write",

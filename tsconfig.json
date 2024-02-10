@@ -9,21 +9,21 @@
     "inlineSources": true,
     "importHelpers": true,
     "lib": [
-      "es2015",
+      "ESNext",
       "dom"
     ],
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
-    "outDir": "./dist",
+    "outDir": "./dist/esm",
     "rootDir": "./src",
     "sourceMap": true,
     "strict": true,
     "skipLibCheck": true,
-    "target": "ES2015",
+    "target": "ESNext",
     "useDefineForClassFields": false
   },
   "include": [
