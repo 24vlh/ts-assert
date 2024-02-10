@@ -18,8 +18,8 @@
     "build": "tsc",
     "index:refresh": "node ./.24vlh/scan.js && git add ./src/index.ts",
     "lint": "npx eslint src/**/*.ts --fix",
+    "prepack": "cp README.md dist/ && cp LICENSE dist/ && cp package.json dist/ && cd dist",
     "prepare": "husky install",
-    "prepublish": "cp README.md dist/ && cp LICENSE dist/ && cp package.json dist/ && cd dist",
     "prepublishOnly": "npm run build",
     "prettify": "npx prettier src/**/*.ts --write",
     "test": "npx jest --logHeapUsage"
