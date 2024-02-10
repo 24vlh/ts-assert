@@ -1,6 +1,6 @@
 {
   "name": "@24vlh/ts-assert",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Small footprint library that helps with typescript assertions.",
   "author": "@vlah.io",
   "license": "Apache-2.0",
@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "index:refresh": "node ./.24vlh/scan.js",
+    "index:refresh": "node ./.24vlh/scan.js && git add ./src/index.ts",
     "lint": "npx eslint src/**/*.ts --fix",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
@@ -28,6 +28,7 @@
   },
   "lint-staged": {
     "*.ts": [
+      "npm run index:refresh",
       "eslint --fix",
       "prettier --write"
     ]
@@ -35,8 +36,8 @@
   "devDependencies": {
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.6",
-    "@typescript-eslint/eslint-plugin": "^6.17.0",
-    "@typescript-eslint/parser": "^6.17.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",

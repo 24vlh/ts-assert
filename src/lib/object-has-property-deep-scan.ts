@@ -15,7 +15,7 @@ export function ObjectHasPropertyDeepScan(
 ): boolean {
   if (OfObjectType(object) && OfStringType(path)) {
     const keys: string[] = path.split('.');
-    let obj: object = object;
+    let obj: object = { ...object };
 
     for (const key of keys) {
       if (ObjectHasOwnProperty(key, obj)) {
@@ -26,6 +26,35 @@ export function ObjectHasPropertyDeepScan(
     }
 
     return true;
+  }
+
+  return false;
+}
+
+/**
+ * Checks if an object has a property at a given nested path.
+ *
+ * @param {unknown} path - The path of the property to check, in dot notation.
+ * @param {unknown} object - The object to search for the property.
+ *
+ * @return {boolean} - Returns true if the property is found, false otherwise.
+ */
+export function ObjectHasPropertyDeepScan2(
+  path: unknown,
+  object: unknown
+): boolean {
+  if (OfObjectType(object) && OfStringType(path)) {
+    const keys: string[] = path.split('.');
+    let obj: object = { ...object };
+
+    return keys.every((key) => {
+      if (ObjectHasOwnProperty(key, obj)) {
+        obj = obj[key];
+        return true;
+      }
+
+      return false;
+    });
   }
 
   return false;
