@@ -6,32 +6,33 @@ const directoryPath = path.join(__dirname, '../src/lib');
 const results = [];
 
 function getDirContents(directoryPath) {
-  const files = fs.readdirSync(directoryPath);
-  files.forEach((str) => {
-    let filePath = path.join(directoryPath, str);
-    if (fs.lstatSync(filePath).isFile()) {
-      if (
-        path.extname(filePath) === '.ts' &&
-        filePath.split('.spec.ts').length === 1
-      ) {
-        results.push(filePath);
-      }
-    } else {
-      getDirContents(filePath);
-    }
-  });
+    const files = fs.readdirSync(directoryPath);
+    files.forEach((str) => {
+        let filePath = path.join(directoryPath, str);
+        if (fs.lstatSync(filePath).isFile()) {
+            if (
+                path.extname(filePath) === '.ts' &&
+                filePath.split('.spec.ts').length === 1 &&
+                filePath.split('.type.ts').length === 1
+            ) {
+                results.push(filePath);
+            }
+        } else {
+            getDirContents(filePath);
+        }
+    });
 }
 
 try {
-  getDirContents(directoryPath);
-  const fp = fs.createWriteStream(path.join(__dirname, '../src/index.ts'), {
-    flags: 'w'
-  });
-  results.forEach((str) => {
-    str = str.replace(/\\/g, '/').split('/src/')[1].replace('.ts', '');
-    fp.write("export * from './" + str + "';" + '\r\n');
-  });
-  fp.end();
+    getDirContents(directoryPath);
+    const fp = fs.createWriteStream(path.join(__dirname, '../src/index.ts'), {
+        flags: 'w'
+    });
+    results.forEach((str) => {
+        str = str.replace(/\\/g, '/').split('/src/')[1].replace('.ts', '');
+        fp.write("export * from './" + str + "';" + '\r\n');
+    });
+    fp.end();
 } catch (e) {
-  console.log(e.message);
+    console.log(e.message);
 }

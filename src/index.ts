@@ -1,4 +1,3 @@
-export * from './lib/24vlh.type';
 export * from './lib/array-type-class';
 export * from './lib/array-type-primitive';
 export * from './lib/array';
