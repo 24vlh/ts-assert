@@ -1,23 +1,18 @@
-import { OfType } from './of-type';
-import { describe, test, expect } from '@jest/globals';
-import { ObjectTypeValues } from './24vlh.type';
+import {NotOfType, OfType} from './of-type';
 
-describe('OfType Function', () => {
-  test('Should return true when tested with matching type', () => {
-    const arg: unknown = 'string';
-    const typeName: ObjectTypeValues = 'String';
-    const result = OfType(arg, typeName);
+test('OfType: Expecting string while string will return true', () => {
+    expect(OfType('string', 'String')).toBe(true);
+});
 
-    expect(result).toBeTruthy();
-  });
+test('OfType: Expecting number while string will return false', () => {
+    expect(OfType('string', 'Number')).toBe(false);
+});
 
-  test('Should return false when tested with non-matching type', () => {
-    const arg: unknown = 'string';
-    const typeName: ObjectTypeValues = 'Number';
-    const result = OfType(arg, typeName);
 
-    expect(result).toBeFalsy();
-  });
+test('NotOfType: Expecting string while string will return false', () => {
+    expect(NotOfType('string', 'String')).toBe(false);
+});
 
-  // You can add more tests for each object type if necessary
+test('NotOfType: Expecting number while string will return true', () => {
+    expect(NotOfType('string', 'Number')).toBe(true);
 });

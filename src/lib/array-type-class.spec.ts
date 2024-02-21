@@ -1,33 +1,33 @@
-import { ArrayOfGivenTypeClass } from './array-type-class';
+import {ArrayOfGivenTypeClass, NotArrayOfGivenTypeClass} from './array-type-class';
+
+// Defining simple type classes
+class TypeClass1 {
+}
+
+class TypeClass2 {
+}
+
+const testData: [unknown, new (...args: never[]) => any, boolean][] = [
+    [[new TypeClass1(), new TypeClass1()], TypeClass1, false],
+    [[new TypeClass1(), new TypeClass2()], TypeClass1, true],
+    [[], TypeClass1, true],
+    ['not an array', TypeClass1, true]
+];
 
 describe('ArrayOfGivenTypeClass', () => {
-  // Defining simple type classes
-  class TypeClass1 {}
-  class TypeClass2 {}
+    test.each(testData)(
+        'NotArrayOfGivenTypeClass: Expecting array of %p to be %p',
+        (inputValue: unknown, expectedTypeClass: new (...args: never[]) => any, expectedOutput: boolean) => {
+            expect(ArrayOfGivenTypeClass(inputValue, expectedTypeClass)).toBe(!expectedOutput);
+        }
+    );
+});
 
-  // valid test cases
-  it('should return true if the argument is an array of instances of the expected type class', () => {
-    const arg = [new TypeClass1(), new TypeClass1()];
-    const result = ArrayOfGivenTypeClass(arg, TypeClass1);
-    expect(result).toBe(true);
-  });
-
-  // invalid test cases
-  it('should return false if the argument is not an array of instances of the expected type class', () => {
-    const arg = [new TypeClass1(), new TypeClass2()];
-    const result = ArrayOfGivenTypeClass(arg, TypeClass1);
-    expect(result).toBe(false);
-  });
-
-  it('should return false if the argument is empty array', () => {
-    const arg: never[] = [];
-    const result = ArrayOfGivenTypeClass(arg, TypeClass1);
-    expect(result).toBe(false);
-  });
-
-  it('should return false if the argument is not an array', () => {
-    const arg = 'not an array';
-    const result = ArrayOfGivenTypeClass(arg, TypeClass1);
-    expect(result).toBe(false);
-  });
+describe('NotArrayOfGivenTypeClass', () => {
+    test.each(testData)(
+        'NotArrayOfGivenTypeClass: Expecting array of %p to be %p',
+        (inputValue: unknown, expectedTypeClass: new (...args: never[]) => any, expectedOutput: boolean) => {
+            expect(NotArrayOfGivenTypeClass(inputValue, expectedTypeClass)).toBe(expectedOutput);
+        }
+    );
 });

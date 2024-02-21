@@ -8,6 +8,14 @@ import { ObjectHasOwnProperty } from './object-has-own-property';
  * @param {unknown} path - The property path as a string, e.g. 'obj.prop.nested'.
  * @param {unknown} object - The object to check.
  * @return {boolean} - True if the property exists, false otherwise.
+ * @example
+ *  const obj = {
+ *    prop: {
+ *    nested: 'value'
+ *   }
+ *  };
+ *  ObjectHasPropertyDeepScan('prop.nested', obj);
+ *  // result is true
  */
 export function ObjectHasPropertyDeepScan(
   path: unknown,
@@ -36,8 +44,15 @@ export function ObjectHasPropertyDeepScan(
  *
  * @param {unknown} path - The path of the property to check, in dot notation.
  * @param {unknown} object - The object to search for the property.
- *
  * @return {boolean} - Returns true if the property is found, false otherwise.
+ * @example
+ *  const obj = {
+ *    prop: {
+ *    nested: 'value'
+ *   }
+ *  };
+ *  ObjectHasPropertyDeepScan('prop.nested', obj);
+ *  // result is true
  */
 export function ObjectHasPropertyDeepScan2(
   path: unknown,

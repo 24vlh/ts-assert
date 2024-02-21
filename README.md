@@ -23,24 +23,24 @@ if (OfArrayType<string>(array)) {
 ## List of helpers
 
 ### Types
+
 - TypeofValues
 - ObjectTypeValues
 
 ### Helpers
+
 - ReturnConstructor
 
 ### Assertion helpers
+
 - OfArrayType
 - ArrayOfGivenTypeClass
 - ArrayOfGivenTypePrimitive
 - OfBooleanType
 - OfBooleanTypeAsString
 - EmptyArray
-- NotEmptyArray
 - EmptyObject
-- NotEmptyObject
 - EmptyString
-- NotEmptyString
 - OfFalseType
 - OfFalseTypeAsString
 - OfFloatType

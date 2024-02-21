@@ -2,6 +2,7 @@ import { OfArrayType } from './array';
 
 /**
  * Checks if the given argument is an empty array.
+ *
  * @param {unknown} arg - The argument to check.
  * @return {boolean | undefined} - Returns true if the argument is an empty array,
  *   otherwise returns undefined.
