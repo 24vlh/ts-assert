@@ -10,9 +10,9 @@ import { OfStringType } from './string';
  *  const result = OfNullTypeAsString(value);
  *  // result is true
  */
-export function OfNullTypeAsString(arg: unknown): arg is string {
+export const OfNullTypeAsString = (arg: unknown): arg is string => {
   return OfStringType(arg) && arg === 'null';
-}
+};
 
 /**
  * Checks if the given argument is not of type string or has value not 'null'.
@@ -24,6 +24,6 @@ export function OfNullTypeAsString(arg: unknown): arg is string {
  *  const result = NotOfNullTypeAsString(value);
  *  // result is true
  */
-export function NotOfNullTypeAsString(arg: unknown): boolean {
+export const NotOfNullTypeAsString = (arg: unknown): boolean => {
   return !OfNullTypeAsString(arg);
-}
+};

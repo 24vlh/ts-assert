@@ -9,12 +9,12 @@
  *  const result = InstanceOfType(value, MyClass);
  *  // result is true
  */
-export function InstanceOfType<T>(
+export const InstanceOfType = <T>(
   arg: unknown,
   expectedTypeClass: new (...args: never[]) => T
-): arg is T {
+): arg is T => {
   return arg instanceof expectedTypeClass;
-}
+};
 
 /**
  * Checks if the given object is not an instance of the expected type.
@@ -27,9 +27,9 @@ export function InstanceOfType<T>(
  *  const result = NotInstanceOfType(value, MyClass);
  *  // result is false
  */
-export function NotInstanceOfType<T>(
+export const NotInstanceOfType = <T>(
   arg: unknown,
   expectedTypeClass: new (...args: never[]) => T
-): boolean {
+): boolean => {
   return !InstanceOfType(arg, expectedTypeClass);
-}
+};

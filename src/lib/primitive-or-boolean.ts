@@ -11,11 +11,11 @@ import { OfBooleanType } from './boolean';
  *  const result = OfPrimitiveOrBooleanType(value);
  *  // result is true
  */
-export function OfPrimitiveOrBooleanType(
+export const OfPrimitiveOrBooleanType = (
   arg: unknown
-): arg is boolean | null | undefined {
+): arg is boolean | null | undefined => {
   return OfPrimitiveType(arg) || OfBooleanType(arg);
-}
+};
 
 /**
  * Checks whether the given argument is not of primitive or boolean type.
@@ -27,6 +27,6 @@ export function OfPrimitiveOrBooleanType(
  *  const result = NotOfPrimitiveOrBooleanType(value);
  *  // result is true
  */
-export function NotOfPrimitiveOrBooleanType(arg: unknown): boolean {
+export const NotOfPrimitiveOrBooleanType = (arg: unknown): boolean => {
   return !OfPrimitiveOrBooleanType(arg);
-}
+};

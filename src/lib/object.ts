@@ -11,9 +11,9 @@ import { OfType } from './of-type';
  *  const result = OfObjectType(value);
  *  // result is true
  */
-export function OfObjectType<T extends object>(arg: unknown): arg is T {
+export const OfObjectType = <T extends object>(arg: unknown): arg is T => {
   return OfType(arg, 'Object');
-}
+};
 
 /**
  * Checks if the given argument is not of the specified object type.
@@ -26,6 +26,6 @@ export function OfObjectType<T extends object>(arg: unknown): arg is T {
  *  const result = NotOfObjectType(value);
  *  // result is true
  */
-export function NotOfObjectType<T extends object>(arg: unknown): boolean {
+export const NotOfObjectType = <T extends object>(arg: unknown): boolean => {
   return !OfObjectType<T>(arg);
-}
+};

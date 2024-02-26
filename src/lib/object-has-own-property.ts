@@ -13,16 +13,16 @@ import { OfStringType } from './string';
  *  const result = ObjectHasOwnProperty('key', value);
  *  // result is true
  */
-export function ObjectHasOwnProperty<T extends object>(
+export const ObjectHasOwnProperty = <T extends object>(
   key: unknown,
   object: unknown
-): key is keyof T {
+): key is keyof T => {
   return (
     OfStringType(key) &&
     OfObjectType<T>(object) &&
     Object.prototype.hasOwnProperty.call(object, key)
   );
-}
+};
 
 /**
  * Checks if an object does not have a specific property.
@@ -35,9 +35,9 @@ export function ObjectHasOwnProperty<T extends object>(
  *  const result = ObjectHasNotOwnProperty('key', value);
  *  // result is false
  */
-export function ObjectHasNotOwnProperty(
+export const ObjectHasNotOwnProperty = (
   key: unknown,
   object: unknown
-): boolean {
+): boolean => {
   return !ObjectHasOwnProperty(key, object);
-}
+};

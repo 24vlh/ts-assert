@@ -12,16 +12,16 @@ import { ObjectHasOwnProperty } from './object-has-own-property';
  *  ObjectOfType({name: 'John', age: 30}, ['name', 'age']);
  *  // result is true
  */
-export function ObjectOfType<T extends object>(
+export const ObjectOfType = <T extends object>(
   arg: unknown,
   requiredKeys: (keyof T)[]
-): arg is T {
+): arg is T => {
   if (!OfObjectType(arg)) return false;
 
   return requiredKeys.every((key: unknown) =>
     ObjectHasOwnProperty<T>(key, arg)
   );
-}
+};
 
 /**
  * Checks if the given argument is not an object of the specified type.
@@ -34,9 +34,9 @@ export function ObjectOfType<T extends object>(
  *  NotObjectOfType({name: 'John', age: 30}, ['name', 'age']);
  *  // result is false
  */
-export function NotObjectOfType<T extends object>(
+export const NotObjectOfType = <T extends object>(
   arg: unknown,
   requiredKeys: (keyof T)[]
-): boolean {
+): boolean => {
   return !ObjectOfType<T>(arg, requiredKeys);
-}
+};

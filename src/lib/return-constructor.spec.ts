@@ -1,4 +1,4 @@
-import { ReturnConstructor } from './return-constructor';
+import {ReturnConstructor} from './return-constructor';
 
 /**
  * Returns the constructor function.
@@ -10,19 +10,20 @@ import { ReturnConstructor } from './return-constructor';
  * @returns {new (...args: never[]) => T} - The constructor function.
  */
 describe('ReturnConstructor', () => {
-  it('should return the given constructor function', () => {
-    class TestClass {
-      foo: string;
-      constructor() {
-        this.foo = 'bar';
-      }
-    }
+    it('should return the given constructor function', () => {
+        class TestClass {
+            foo: string;
 
-    const testConstructor = ReturnConstructor(TestClass);
+            constructor() {
+                this.foo = 'bar';
+            }
+        }
 
-    const testInstance = new testConstructor();
+        const testConstructor = ReturnConstructor(TestClass);
 
-    expect(testInstance.constructor.name).toBe('TestClass');
-    expect(testInstance.foo).toBe('bar');
-  });
+        const testInstance = new testConstructor();
+
+        expect(testInstance.constructor.name).toBe('TestClass');
+        expect(testInstance.foo).toBe('bar');
+    });
 });

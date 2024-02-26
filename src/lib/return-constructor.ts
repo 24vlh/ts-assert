@@ -14,8 +14,8 @@
  *  const example = new ExampleConstructor();
  *  // Output: Example created
  */
-export function ReturnConstructor<T>(
+export const ReturnConstructor = <T>(
   constructor: new (...args: never[]) => T
-): new (...args: never[]) => T {
+): new (...args: never[]) => T => {
   return constructor;
-}
+};

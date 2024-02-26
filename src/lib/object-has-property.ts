@@ -13,12 +13,12 @@ import { OfObjectType } from './object';
  *  const result = ObjectHasProperty('key', value);
  *  // result is true
  */
-export function ObjectHasProperty<T extends object>(
+export const ObjectHasProperty = <T extends object>(
   key: unknown,
   object: unknown
-): key is keyof T {
+): key is keyof T => {
   return OfStringType(key) && OfObjectType<T>(object) && key in object;
-}
+};
 
 /**
  * Checks if an object does not have a specific property.
@@ -31,6 +31,9 @@ export function ObjectHasProperty<T extends object>(
  *  const result = ObjectHasNotProperty('key', value);
  *  // result is false
  */
-export function ObjectHasNotProperty(key: unknown, object: unknown): boolean {
+export const ObjectHasNotProperty = (
+  key: unknown,
+  object: unknown
+): boolean => {
   return !ObjectHasProperty(key, object);
-}
+};

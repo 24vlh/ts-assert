@@ -10,9 +10,9 @@ import { OfBooleanType } from './boolean';
  *  const result = OfTrueType(value);
  *  // result is true
  */
-export function OfTrueType(arg: unknown): arg is true {
+export const OfTrueType = (arg: unknown): arg is true => {
   return OfBooleanType(arg) && arg;
-}
+};
 
 /**
  * Checks if the given argument is not of type true.
@@ -24,6 +24,6 @@ export function OfTrueType(arg: unknown): arg is true {
  *  const result = NotOfTrueType(value);
  *  // result is true
  */
-export function NotOfTrueType(arg: unknown): boolean {
+export const NotOfTrueType = (arg: unknown): boolean => {
   return !OfTrueType(arg);
-}
+};

@@ -10,9 +10,9 @@ import { OfType } from './of-type';
  *  const result = OfNumberType(value);
  *  // result is true
  */
-export function OfNumberType(arg: unknown): arg is number {
+export const OfNumberType = (arg: unknown): arg is number => {
   return OfType(arg, 'Number') && Number.isFinite(arg);
-}
+};
 
 /**
  * Checks if the given argument is not of number type.
@@ -24,6 +24,6 @@ export function OfNumberType(arg: unknown): arg is number {
  *  const result = NotOfNumberType(value);
  *  // result is true
  */
-export function NotOfNumberType(arg: unknown): boolean {
+export const NotOfNumberType = (arg: unknown): boolean => {
   return !OfNumberType(arg);
-}
+};

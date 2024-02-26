@@ -17,10 +17,10 @@ import { ObjectHasOwnProperty } from './object-has-own-property';
  *  ObjectHasPropertyDeepScan('prop.nested', obj);
  *  // result is true
  */
-export function ObjectHasPropertyDeepScan(
+export const ObjectHasPropertyDeepScan = (
   path: unknown,
   object: unknown
-): boolean {
+): boolean => {
   if (OfObjectType(object) && OfStringType(path)) {
     const keys: string[] = path.split('.');
     let obj: object = { ...object };
@@ -37,7 +37,7 @@ export function ObjectHasPropertyDeepScan(
   }
 
   return false;
-}
+};
 
 /**
  * Checks if an object has a property at a given nested path.
@@ -54,10 +54,10 @@ export function ObjectHasPropertyDeepScan(
  *  ObjectHasPropertyDeepScan('prop.nested', obj);
  *  // result is true
  */
-export function ObjectHasPropertyDeepScan2(
+export const ObjectHasPropertyDeepScan2 = (
   path: unknown,
   object: unknown
-): boolean {
+): boolean => {
   if (OfObjectType(object) && OfStringType(path)) {
     const keys: string[] = path.split('.');
     let obj: object = { ...object };
@@ -73,4 +73,4 @@ export function ObjectHasPropertyDeepScan2(
   }
 
   return false;
-}
+};

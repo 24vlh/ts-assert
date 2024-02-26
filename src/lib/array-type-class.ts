@@ -12,10 +12,10 @@ import { ReturnConstructor } from './return-constructor';
  *  const result = ArrayOfGivenTypeClass(value, MyClass);
  *  // result is true
  */
-export function ArrayOfGivenTypeClass<T>(
+export const ArrayOfGivenTypeClass = <T>(
   arg: unknown,
   expectedTypeClass: new (...args: never[]) => T
-): arg is T[] {
+): arg is T[] => {
   return (
     Array.isArray(arg) &&
     arg.length > 0 &&
@@ -24,7 +24,7 @@ export function ArrayOfGivenTypeClass<T>(
         item instanceof ReturnConstructor(expectedTypeClass)
     )
   );
-}
+};
 
 /**
  * Checks if the given argument is not an array of a specific type.
@@ -38,10 +38,10 @@ export function ArrayOfGivenTypeClass<T>(
  *  const result = NotArrayOfGivenTypeClass(value, MyClass);
  *  // result is false
  */
-export function NotArrayOfGivenTypeClass<T>(
+export const NotArrayOfGivenTypeClass = <T>(
   arg: unknown,
   expectedTypeClass: new (...args: never[]) => T
-): boolean {
+): boolean => {
   return (
     !Array.isArray(arg) ||
     arg.length === 0 ||
@@ -50,4 +50,4 @@ export function NotArrayOfGivenTypeClass<T>(
         item instanceof ReturnConstructor(expectedTypeClass)
     )
   );
-}
+};

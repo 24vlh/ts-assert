@@ -10,9 +10,9 @@ import { OfType } from './of-type';
  *  const result = OfSymbolType(value);
  *  // result is true
  */
-export function OfSymbolType(arg: unknown): arg is symbol {
+export const OfSymbolType = (arg: unknown): arg is symbol => {
   return OfType(arg, 'Symbol');
-}
+};
 
 /**
  * Checks if the given argument is not of type `symbol`.
@@ -24,6 +24,6 @@ export function OfSymbolType(arg: unknown): arg is symbol {
  *  const result = NotOfSymbolType(value);
  *  // result is true
  */
-export function NotOfSymbolType(arg: unknown): boolean {
+export const NotOfSymbolType = (arg: unknown): boolean => {
   return !OfSymbolType(arg);
-}
+};

@@ -10,9 +10,9 @@ import { OfType } from './of-type';
  *  const result = OfUndefinedType(value);
  *  // result is true
  */
-export function OfUndefinedType(arg: unknown): arg is undefined {
+export const OfUndefinedType = (arg: unknown): arg is undefined => {
   return OfType(arg, 'Undefined');
-}
+};
 
 /**
  * Checks if a value is not of type undefined.
@@ -24,6 +24,6 @@ export function OfUndefinedType(arg: unknown): arg is undefined {
  *  const result = NotOfUndefinedType(value);
  *  // result is true
  */
-export function NotOfUndefinedType(arg: unknown): boolean {
+export const NotOfUndefinedType = (arg: unknown): boolean => {
   return !OfUndefinedType(arg);
-}
+};

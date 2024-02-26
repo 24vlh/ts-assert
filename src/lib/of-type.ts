@@ -11,9 +11,9 @@ import { ObjectTypeValues } from './24vlh.type';
  *  const result = OfType(value, 'Object');
  *  // result is true
  */
-export function OfType(arg: unknown, typeName: ObjectTypeValues): boolean {
+export const OfType = (arg: unknown, typeName: ObjectTypeValues): boolean => {
   return Object.prototype.toString.call(arg) === `[object ${typeName}]`;
-}
+};
 
 /**
  * Check if the given argument is not of the specified type.
@@ -26,6 +26,9 @@ export function OfType(arg: unknown, typeName: ObjectTypeValues): boolean {
  *  const result = NotOfType(value, 'Object');
  *  // result is true
  */
-export function NotOfType(arg: unknown, typeName: ObjectTypeValues): boolean {
+export const NotOfType = (
+  arg: unknown,
+  typeName: ObjectTypeValues
+): boolean => {
   return !OfType(arg, typeName);
-}
+};

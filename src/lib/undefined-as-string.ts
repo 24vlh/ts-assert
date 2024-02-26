@@ -11,9 +11,9 @@ import { OfStringType } from './string';
  *  const result = OfUndefinedTypeAsString(value);
  *  // result is true
  */
-export function OfUndefinedTypeAsString(arg: unknown): arg is string {
+export const OfUndefinedTypeAsString = (arg: unknown): arg is string => {
   return OfStringType(arg) && arg === 'undefined';
-}
+};
 
 /**
  * Checks if the given argument is not of type string or has value not 'undefined'.
@@ -26,6 +26,6 @@ export function OfUndefinedTypeAsString(arg: unknown): arg is string {
  *  const result = NotOfUndefinedTypeAsString(value);
  *  // result is true
  */
-export function NotOfUndefinedTypeAsString(arg: unknown): boolean {
+export const NotOfUndefinedTypeAsString = (arg: unknown): boolean => {
   return !OfUndefinedTypeAsString(arg);
-}
+};

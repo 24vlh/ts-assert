@@ -11,9 +11,9 @@ import { OfUndefinedTypeAsString } from './undefined-as-string';
  *  const result = OfPrimitiveTypeAsString(value);
  *  // result is true
  */
-export function OfPrimitiveTypeAsString(arg: unknown): arg is string {
+export const OfPrimitiveTypeAsString = (arg: unknown): arg is string => {
   return OfNullTypeAsString(arg) || OfUndefinedTypeAsString(arg);
-}
+};
 
 /**
  * Checks if the given argument is not of primitive type string.
@@ -25,6 +25,6 @@ export function OfPrimitiveTypeAsString(arg: unknown): arg is string {
  *  const result = NotOfPrimitiveTypeAsString(value);
  *  // result is true
  */
-export function NotOfPrimitiveTypeAsString(arg: unknown): boolean {
+export const NotOfPrimitiveTypeAsString = (arg: unknown): boolean => {
   return !OfPrimitiveTypeAsString(arg);
-}
+};

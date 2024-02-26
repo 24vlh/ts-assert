@@ -12,16 +12,16 @@ import { TypeofValues } from './24vlh.type';
  *  const result = ArrayOfGivenTypePrimitive<number>(value, 'number');
  *  // result is true
  */
-export function ArrayOfGivenTypePrimitive<T>(
+export const ArrayOfGivenTypePrimitive = <T>(
   arg: unknown,
   expectedTypeofValue: TypeofValues
-): arg is T[] {
+): arg is T[] => {
   return (
     Array.isArray(arg) &&
     arg.length > 0 &&
     arg.every((item: unknown): boolean => typeof item === expectedTypeofValue)
   );
-}
+};
 
 /**
  * Checks if the provided argument is not an array of a specific primitive type.
@@ -34,13 +34,13 @@ export function ArrayOfGivenTypePrimitive<T>(
  *  const result = NotArrayOfGivenTypePrimitive<number>(value, 'number');
  *  // result is false
  */
-export function NotArrayOfGivenTypePrimitive(
+export const NotArrayOfGivenTypePrimitive = (
   arg: unknown,
   expectedTypeofValue: TypeofValues
-): boolean {
+): boolean => {
   return (
     !Array.isArray(arg) ||
     arg.length === 0 ||
     !arg.every((item: unknown): boolean => typeof item === expectedTypeofValue)
   );
-}
+};

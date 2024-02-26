@@ -9,9 +9,9 @@
  *  const result = OfArrayType<number>(value);
  *  // result is true
  */
-export function OfArrayType<T>(arg: unknown): arg is T[] {
+export const OfArrayType = <T>(arg: unknown): arg is T[] => {
   return Array.isArray(arg);
-}
+};
 
 /**
  * Checks if the provided argument is not of type array.
@@ -23,6 +23,6 @@ export function OfArrayType<T>(arg: unknown): arg is T[] {
  *  const result = NotOfArrayType(value);
  *  // result is true
  */
-export function NotOfArrayType(arg: unknown): boolean {
+export const NotOfArrayType = (arg: unknown): boolean => {
   return !Array.isArray(arg);
-}
+};

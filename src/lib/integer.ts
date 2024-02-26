@@ -10,9 +10,9 @@ import { OfNumberType } from './number';
  *  const result = OfIntegerType(value);
  *  // result is true
  */
-export function OfIntegerType(arg: unknown): arg is number {
+export const OfIntegerType = (arg: unknown): arg is number => {
   return OfNumberType(arg) && Number.isInteger(arg);
-}
+};
 
 /**
  * Check if a given value is not of type "number" or is not an integer.
@@ -24,6 +24,6 @@ export function OfIntegerType(arg: unknown): arg is number {
  *  const result = NotOfIntegerType(value);
  *  // result is true
  */
-export function NotOfIntegerType(arg: unknown): boolean {
+export const NotOfIntegerType = (arg: unknown): boolean => {
   return !OfIntegerType(arg);
-}
+};

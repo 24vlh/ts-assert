@@ -12,9 +12,9 @@ import { OfType } from './of-type';
  *  const result = OfFunctionType(value);
  *  // result is true
  */
-export function OfFunctionType<T>(arg: unknown): arg is T {
+export const OfFunctionType = <T>(arg: unknown): arg is T => {
   return OfType(arg, 'Function');
-}
+};
 
 /**
  * This function checks if the given argument is not of a specific type T.
@@ -27,9 +27,9 @@ export function OfFunctionType<T>(arg: unknown): arg is T {
  *  const result = NotOfFunctionType(value);
  *  // result is true
  */
-export function NotOfFunctionType(arg: unknown): boolean {
+export const NotOfFunctionType = (arg: unknown): boolean => {
   return !OfFunctionType(arg);
-}
+};
 
 /**
  * This function checks if the given argument is a function.
@@ -43,9 +43,9 @@ export function NotOfFunctionType(arg: unknown): boolean {
  *  const result = OfFunctionType2(value);
  *  // result is true
  */
-export function OfFunctionType2<T>(arg: unknown): arg is T {
+export const OfFunctionType2 = <T>(arg: unknown): arg is T => {
   return typeof arg === 'function';
-}
+};
 
 /**
  * This function checks if the given argument is not a function.
@@ -58,6 +58,6 @@ export function OfFunctionType2<T>(arg: unknown): arg is T {
  *  const result = NotOfFunctionType2(value);
  *  // result is true
  */
-export function NotOfFunctionType2(arg: unknown): boolean {
+export const NotOfFunctionType2 = (arg: unknown): boolean => {
   return !OfFunctionType2(arg);
-}
+};

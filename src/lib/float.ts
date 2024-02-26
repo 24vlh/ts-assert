@@ -10,9 +10,9 @@ import { OfNumberType } from './number';
  *  const result = OfFloatType(value);
  *  // result is true
  */
-export function OfFloatType(arg: unknown): arg is number {
+export const OfFloatType = (arg: unknown): arg is number => {
   return OfNumberType(arg) && arg % 1 !== 0;
-}
+};
 
 /**
  * Check if the given argument is not of type number or is an integer.
@@ -24,6 +24,6 @@ export function OfFloatType(arg: unknown): arg is number {
  *  const result = NotOfFloatType(value);
  *  // result is true
  */
-export function NotOfFloatType(arg: unknown): boolean {
+export const NotOfFloatType = (arg: unknown): boolean => {
   return !OfFloatType(arg);
-}
+};

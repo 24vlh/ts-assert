@@ -11,9 +11,9 @@ import { OfFalseTypeAsString } from './false-as-string';
  *  const result = OfBooleanTypeAsString(value);
  *  // result is true
  */
-export function OfBooleanTypeAsString(arg: unknown): arg is string {
+export const OfBooleanTypeAsString = (arg: unknown): arg is string => {
   return OfTrueTypeAsString(arg) || OfFalseTypeAsString(arg);
-}
+};
 
 /**
  * Checks if the given argument is not of type string or has value not 'boolean'.
@@ -25,6 +25,6 @@ export function OfBooleanTypeAsString(arg: unknown): arg is string {
  *  const result = NotOfBooleanTypeAsString(value);
  *  // result is true
  */
-export function NotOfBooleanTypeAsString(arg: unknown): boolean {
+export const NotOfBooleanTypeAsString = (arg: unknown): boolean => {
   return !OfBooleanTypeAsString(arg);
-}
+};

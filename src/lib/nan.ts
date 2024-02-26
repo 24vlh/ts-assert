@@ -8,9 +8,9 @@
  *  const result = OfNanType(value);
  *  // result is true
  */
-export function OfNanType(arg: unknown): arg is typeof NaN {
+export const OfNanType = (arg: unknown): arg is typeof NaN => {
   return Number.isNaN(arg);
-}
+};
 
 /**
  * Checks if the given argument is not of NaN type.
@@ -22,6 +22,6 @@ export function OfNanType(arg: unknown): arg is typeof NaN {
  *  const result = NotOfNanType(value);
  *  // result is true
  */
-export function NotOfNanType(arg: unknown): boolean {
+export const NotOfNanType = (arg: unknown): boolean => {
   return !Number.isNaN(arg);
-}
+};

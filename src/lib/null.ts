@@ -10,9 +10,9 @@ import { OfType } from './of-type';
  *  const result = OfNullType(value);
  *  // result is true
  */
-export function OfNullType(arg: unknown): arg is null {
+export const OfNullType = (arg: unknown): arg is null => {
   return OfType(arg, 'Null');
-}
+};
 
 /**
  * Checks if the given argument is not of type null.
@@ -24,6 +24,6 @@ export function OfNullType(arg: unknown): arg is null {
  *  const result = NotOfNullType(value);
  *  // result is true
  */
-export function NotOfNullType(arg: unknown): boolean {
+export const NotOfNullType = (arg: unknown): boolean => {
   return !OfNullType(arg);
-}
+};

@@ -11,9 +11,9 @@ import { OfUndefinedType } from './undefined';
  *  const result = OfPrimitiveType(value);
  *  // result is true
  */
-export function OfPrimitiveType(arg: unknown): arg is null | undefined {
+export const OfPrimitiveType = (arg: unknown): arg is null | undefined => {
   return OfNullType(arg) || OfUndefinedType(arg);
-}
+};
 
 /**
  * Checks if the given argument is not null or undefined.
@@ -25,6 +25,6 @@ export function OfPrimitiveType(arg: unknown): arg is null | undefined {
  *  const result = NotOfPrimitiveType(value);
  *  // result is true
  */
-export function NotOfPrimitiveType(arg: unknown): boolean {
+export const NotOfPrimitiveType = (arg: unknown): boolean => {
   return !OfPrimitiveType(arg);
-}
+};

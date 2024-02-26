@@ -10,9 +10,9 @@ import { OfStringType } from './string';
  *  const result = OfNumberTypeAsString(value);
  *  // result is true
  */
-export function OfNumberTypeAsString(arg: unknown): arg is string {
+export const OfNumberTypeAsString = (arg: unknown): arg is string => {
   return OfStringType(arg) && /^\d+(\.\d+)?$/.test(arg);
-}
+};
 
 /**
  * Checks if the given argument is not of type string and represents a number.
@@ -24,6 +24,6 @@ export function OfNumberTypeAsString(arg: unknown): arg is string {
  *  const result = NotOfNumberTypeAsString(value);
  *  // result is true
  */
-export function NotOfNumberTypeAsString(arg: unknown): boolean {
+export const NotOfNumberTypeAsString = (arg: unknown): boolean => {
   return !OfNumberTypeAsString(arg);
-}
+};

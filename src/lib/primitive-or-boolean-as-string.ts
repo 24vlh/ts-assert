@@ -11,11 +11,11 @@ import { OfBooleanTypeAsString } from './boolean-as-string';
  *  const result = OfPrimitiveOrBooleanTypeAsString(value);
  *  // result is true
  */
-export function OfPrimitiveOrBooleanTypeAsString(
+export const OfPrimitiveOrBooleanTypeAsString = (
   arg: unknown
-): arg is boolean | null | undefined {
+): arg is boolean | null | undefined => {
   return OfPrimitiveTypeAsString(arg) || OfBooleanTypeAsString(arg);
-}
+};
 
 /**
  * Determines if the given argument is not of the type boolean, null, or undefined, and returns a boolean value.
@@ -27,6 +27,6 @@ export function OfPrimitiveOrBooleanTypeAsString(
  *  const result = NotOfPrimitiveOrBooleanTypeAsString(value);
  *  // result is true
  */
-export function NotOfPrimitiveOrBooleanTypeAsString(arg: unknown): boolean {
+export const NotOfPrimitiveOrBooleanTypeAsString = (arg: unknown): boolean => {
   return !OfPrimitiveOrBooleanTypeAsString(arg);
-}
+};

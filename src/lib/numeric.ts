@@ -11,9 +11,9 @@ import { OfNumberTypeAsString } from './number-as-string';
  *  const result = OfNumericType(value);
  *  // result is true
  */
-export function OfNumericType(arg: unknown): arg is number | string {
+export const OfNumericType = (arg: unknown): arg is number | string => {
   return OfNumberType(arg) || OfNumberTypeAsString(arg);
-}
+};
 
 /**
  * Checks if the given argument is not of numeric type (number or string).
@@ -25,6 +25,6 @@ export function OfNumericType(arg: unknown): arg is number | string {
  *  const result = NotOfNumericType(value);
  *  // result is true
  */
-export function NotOfNumericType(arg: unknown): boolean {
+export const NotOfNumericType = (arg: unknown): boolean => {
   return !OfNumericType(arg);
-}
+};

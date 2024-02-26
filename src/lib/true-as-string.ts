@@ -10,9 +10,9 @@ import { OfStringType } from './string';
  *  const result = OfTrueTypeAsString(value);
  *  // result is true
  */
-export function OfTrueTypeAsString(arg: unknown): arg is string {
+export const OfTrueTypeAsString = (arg: unknown): arg is string => {
   return OfStringType(arg) && arg === 'true';
-}
+};
 
 /**
  * Checks if the provided argument is not of type string or has value not 'true'.
@@ -24,6 +24,6 @@ export function OfTrueTypeAsString(arg: unknown): arg is string {
  *  const result = NotOfTrueTypeAsString(value);
  *  // result is true
  */
-export function NotOfTrueTypeAsString(arg: unknown): boolean {
+export const NotOfTrueTypeAsString = (arg: unknown): boolean => {
   return !OfTrueTypeAsString(arg);
-}
+};
