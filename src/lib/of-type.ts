@@ -3,15 +3,19 @@ import { ObjectTypeValues } from './24vlh.type';
 /**
  * Check if the given argument is of the specified type.
  *
+ * @template T - The type of the arg.
  * @param {unknown} arg - The argument to check.
  * @param {ObjectTypeValues} typeName - The name of the object type to compare against.
  * @return {boolean} - Returns `true` if the argument is of the specified type, `false` otherwise.
  * @example
  *  const value = {};
- *  const result = OfType(value, 'Object');
+ *  const result = OfType<{}>(value, 'Object');
  *  // result is true
  */
-export const OfType = (arg: unknown, typeName: ObjectTypeValues): boolean => {
+export const OfType = <T>(
+  arg: unknown,
+  typeName: ObjectTypeValues
+): arg is T => {
   return Object.prototype.toString.call(arg) === `[object ${typeName}]`;
 };
 
