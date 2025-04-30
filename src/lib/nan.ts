@@ -8,7 +8,7 @@
  *  const result = OfNanType(value);
  *  // result is true
  */
-export const OfNanType = (arg: unknown): arg is typeof NaN => {
+export const OfNanType = (arg: unknown): arg is number => {
   return Number.isNaN(arg);
 };
 

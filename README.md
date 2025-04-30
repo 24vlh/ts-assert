@@ -45,6 +45,8 @@ if (OfArrayType<string>(array)) {
 - OfFalseTypeAsString
 - OfFloatType
 - OfFunctionType
+- OfFunctionType2
+- OfImmutablePrimitiveType
 - InstanceOfType
 - OfIntegerType
 - OfNanType

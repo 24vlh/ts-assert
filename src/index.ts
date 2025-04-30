@@ -10,6 +10,7 @@ export * from './lib/false-as-string';
 export * from './lib/false';
 export * from './lib/float';
 export * from './lib/function';
+export * from './lib/immutable-primitive';
 export * from './lib/instance-type';
 export * from './lib/integer';
 export * from './lib/nan';
