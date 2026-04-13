@@ -33,6 +33,9 @@ if (OfArrayType<string>(array)) {
 
 ### Assertion helpers
 
+- Assert
+- AssertDefined
+- AssertNonEmptyString
 - OfArrayType
 - ArrayOfGivenTypeClass
 - ArrayOfGivenTypePrimitive

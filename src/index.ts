@@ -1,6 +1,7 @@
 export * from './lib/array-type-class';
 export * from './lib/array-type-primitive';
 export * from './lib/array';
+export * from './lib/assert';
 export * from './lib/boolean-as-string';
 export * from './lib/boolean';
 export * from './lib/empty-array';
